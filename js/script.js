@@ -23,24 +23,20 @@ for(let i = 0; i < images.length; i++){
 gallery.innerHTML = imageElements;
 
 prevButton.addEventListener('click', function(){
-    if(currentIndex === 0) return;
-
     const currentImage = gallery.querySelector(`img[src="${images[currentIndex]}"]`);
     currentImage.classList.remove('active');
     
-    currentIndex--;
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
     
     const newImage = gallery.querySelector(`img[src="${images[currentIndex]}"]`);
     newImage.classList.add('active');
 });
 
 nextButton.addEventListener('click', function(){
-    if(currentIndex === images.length - 1) return;
-    
     const currentImage = gallery.querySelector(`img[src="${images[currentIndex]}"]`);
     currentImage.classList.remove('active');
     
-    currentIndex++;
+    currentIndex = (currentIndex + 1) % images.length;
     
     const newImage = gallery.querySelector(`img[src="${images[currentIndex]}"]`);
     newImage.classList.add('active');

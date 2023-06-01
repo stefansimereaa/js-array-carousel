@@ -24,7 +24,7 @@
 #carousel i{
     font-size: 30px;
     position: absolute;
-    top: 50%;
+    bottom: 50%;
     cursor: pointer;
     transform: translate( 0 -50%);
 }
